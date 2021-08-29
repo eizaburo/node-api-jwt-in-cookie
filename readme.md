@@ -1,5 +1,13 @@
-## モジュールインストール
+## 説明
+
+* node.jsで作られたAPI。
+* 認証OKならTokenを発行し、レスポンスのCookieにHttpOnlyで保存。
+
+## 利用方法
 
 ```bash
-npm install express jsonwebtoken cookie-parser csurf
+git clone
+
+npm install
+node index.js
 ```
