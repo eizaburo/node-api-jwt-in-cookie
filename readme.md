@@ -1,3 +1,9 @@
+## API
+
+* /private 認証なし
+* /login 認証なし。Token発行
+* /private 認証ありのページ
+
 ## 説明
 
 * node.jsで作られたAPI。
