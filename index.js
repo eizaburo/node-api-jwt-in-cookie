@@ -49,6 +49,17 @@ app.post("/login", (req, res) => {
     }
 });
 
+//Tokenリフレッシュ
+app.post("/refresh", verifyTokenOnCookie, (req, res) => {
+    const token = jwt.sign({ username: "refresh" }, SECRET, { expiresIn: "10m" });
+    res.cookie("token", token, { httpOnly: true });
+    res.json({
+        status: "OK",
+        token: token,
+        message: "success."
+    });
+})
+
 //認証有りAPI（ミドルウエアでCookie中のTokenをチェック）
 app.get("/private", verifyTokenOnCookie, (req, res) => {
     res.json({
